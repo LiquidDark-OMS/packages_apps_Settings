@@ -107,5 +107,8 @@
     <string name="changelog_title">Changelog</string>
     <string name="changelog_summary">See some of the recent commits.</string>
     <string name="changelog_error">Unable to load changelog</string>
+    
+    <!-- SuperSU -->
+    <string name="supersu_title">SuperSU</string>
 
 </resources>

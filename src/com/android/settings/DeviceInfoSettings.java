@@ -68,6 +68,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_MOD_BUILD_DATE = "build_date";
     private static final String KEY_NOUGAT_VERSION = "nougat_version";
     private static final String KEY_VENDOR_VERSION = "vendor_version";
+    private static final String KEY_SM_KERNEL = "sm_kernel";
+    private static final String PROPERTY_SM_KERNEL = "ro.sm.kernel";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
@@ -127,6 +129,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
         setValueSummary(KEY_NOUGAT_VERSION, "ro.nougat.version");
         findPreference(KEY_NOUGAT_VERSION).setEnabled(true);
+        setValueSummary(KEY_SM_KERNEL,  PROPERTY_SM_KERNEL);
 
         if (!SELinux.isSELinuxEnabled()) {
             String status = getResources().getString(R.string.selinux_status_disabled);
@@ -139,6 +142,10 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         // Remove selinux information if property is not present
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_SELINUX_STATUS,
                 PROPERTY_SELINUX_STATUS);
+
+        // Remove SM GCC kernel version if not found
+        removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_SM_KERNEL,
+                PROPERTY_SM_KERNEL);
 
         // Remove Equipment id preference if FCC ID is not set by RIL
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_EQUIPMENT_ID,
@@ -390,4 +397,3 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             }
         };
 }
-

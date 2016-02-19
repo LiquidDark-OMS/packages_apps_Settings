@@ -32,6 +32,10 @@
     <string name="build_date">Build date</string>
     <string name="build_date_default">2014-01-01-0000</string>
 
+    <!-- Clang version -->
+    <string name="dtc_version">Clang</string>
+    <string name="dtc_version_default">None</string>
+
     <!-- Model name -->
     <string name="model_name">Model name</string>
 
@@ -107,7 +111,7 @@
     <string name="changelog_title">Changelog</string>
     <string name="changelog_summary">See some of the recent commits.</string>
     <string name="changelog_error">Unable to load changelog</string>
-    
+
     <!-- SuperSU -->
     <string name="supersu_title">SuperSU</string>
 

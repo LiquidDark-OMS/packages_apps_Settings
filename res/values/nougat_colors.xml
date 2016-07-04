@@ -22,5 +22,10 @@
     <color name="expanded_button_color_normal">#4CAF50</color>
     <color name="expanded_button_color_close">#F44336</color>
 
-</resources>
+    <!-- General -->
+    <color name="theme_accent">@*android:color/material_deep_teal_500</color>
 
+    <!-- Changelog -->
+    <color name="changelog_title_color">@color/theme_accent</color>
+
+</resources>

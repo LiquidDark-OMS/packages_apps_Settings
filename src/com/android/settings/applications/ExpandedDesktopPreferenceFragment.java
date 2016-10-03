@@ -115,7 +115,7 @@ public class ExpandedDesktopPreferenceFragment extends SettingsPreferenceFragmen
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsEvent.BENZO;
+        return MetricsEvent.VIEW_UNKNOWN;
     }
 
     @Override

@@ -1592,13 +1592,13 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
 
     private void updateCpuInfoOptions() {
         updateSwitchPreference(mShowCpuInfo, Settings.Global.getInt(getActivity().getContentResolver(),
-                Settings.Global.SHOW_CPU, 0) != 0);
+                Settings.Global.SHOW_CPU_INFO_KEY, 0) != 0);
     }
 
     private void writeCpuInfoOptions() {
         boolean value = mShowCpuInfo.isChecked();
         Settings.Global.putInt(getActivity().getContentResolver(),
-                Settings.Global.SHOW_CPU, value ? 1 : 0);
+                Settings.Global.SHOW_CPU_INFO_KEY, value ? 1 : 0);
         Intent service = (new Intent())
                 .setClassName("com.android.systemui", "com.android.systemui.CPUInfoService");
         if (value) {
